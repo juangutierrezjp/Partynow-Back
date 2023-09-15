@@ -11,7 +11,6 @@ server.name = "Api_PartyNow";
 server.use(morgan("dev"));
 server.use(cors());
 
-
 server.use("/", routes);
 
 server.use((err, req, res, next) => {
