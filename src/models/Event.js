@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
     },
     capacitance:{
-        type: DataTypes.ENUM
+        type: DataTypes.FLOAT,
     }
 
   }, {
