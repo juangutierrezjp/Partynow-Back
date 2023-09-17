@@ -111,14 +111,6 @@ User.hasMany(Review);
 Review.belongsTo(User); 
 
 
-
-
-
-
-
-
-
-
 module.exports = {
    ...sequelize.models, 
    conn: sequelize, 
