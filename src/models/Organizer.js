@@ -37,7 +37,7 @@ module.exports = (sequelize) => {
         type:DataTypes.STRING,
         allowNull: true,   
     },
-    followers:{                                      
+    numberfollowers:{                                      
         type:DataTypes.INTEGER,
         allowNull: true,   
     },

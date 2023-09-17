@@ -45,9 +45,16 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 /////// ACA IMPORTAMOS LOS MODELOS /////// JuanPa
 const {
-   User,
+   Assigned,
+   Establishment,
+   Event,
+   Follower,
+   Organizer,
    Pv,
-   Organizer
+   Review,
+   Series,
+   Ticket,
+   User,
 
 } = sequelize.models
 
@@ -55,8 +62,64 @@ const {
 /////// ACA VIENEN LAS RELACIONES /////// JuanPa
 
 
+// Pv con Asignado
+Pv.hasMany(Assigned);
+Assigned.belongsTo(Pv);
+
+// Pv con Ticket
+Pv.hasMany(Ticket);
+Ticket.belongsTo(Pv);
+
+// Organizador con Establecimiento
+Organizer.hasMany(Establishment);
+Establishment.belongsTo(Organizer);
+
+// Organizador con Asignado
+Organizer.hasMany(Assigned);
+Assigned.belongsTo(Organizer);
+
+// Organizador con Evento
+Organizer.hasMany(Event);
+Event.belongsTo(Organizer);
+
+// Organizacion con Seguidor
+ Organizer.hasMany(Follower);
+Follower.belongsTo(Organizer); 
+
+// Evento con Tanda
+Event.hasMany(Series);
+Series.belongsTo(Event);
+
+// Evento con Ticket 
+Event.hasMany(Ticket);
+Ticket.belongsTo(Event);
+
+// Evento con Review
+Event.hasMany(Review);
+Review.belongsTo(Event);
+
+// Usuario con Ticket
+User.hasMany(Ticket);
+Ticket.belongsTo(User);
+
+// Usuario con Seguidor
+User.hasMany(Follower);
+Follower.belongsTo(User);
+
+// Usuario con Review
+User.hasMany(Review);
+Review.belongsTo(User); 
+
+
+
+
+
+
+
+
+
 
 module.exports = {
-   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-   conn: sequelize, // para importart la conexión { conn } = require('./db.js');
+   ...sequelize.models, 
+   conn: sequelize, 
 };
