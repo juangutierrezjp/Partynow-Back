@@ -74,16 +74,12 @@ Ticket.belongsTo(Pv);
 Organizer.hasMany(Establishment);
 Establishment.belongsTo(Organizer);
 
-// Organizador con Asignado
-Organizer.hasMany(Assigned);
-Assigned.belongsTo(Organizer);
-
 // Organizador con Evento
 Organizer.hasMany(Event);
 Event.belongsTo(Organizer);
 
 // Organizacion con Seguidor
- Organizer.hasMany(Follower);
+Organizer.hasMany(Follower);
 Follower.belongsTo(Organizer); 
 
 // Evento con Tanda
@@ -97,6 +93,10 @@ Ticket.belongsTo(Event);
 // Evento con Review
 Event.hasMany(Review);
 Review.belongsTo(Event);
+
+// Evento con Asignado
+Event.hasMany(Assigned);
+Assigned.belongsTo(Event);
 
 // Usuario con Ticket
 User.hasMany(Ticket);
