@@ -33,6 +33,9 @@ module.exports = (sequelize) => {
     },
     capacitance:{
         type: DataTypes.FLOAT,
+    },
+    iterativo:{
+        type: DataTypes.BOOLEAN,
     }
 
   }, {
