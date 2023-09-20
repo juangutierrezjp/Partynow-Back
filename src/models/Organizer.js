@@ -48,6 +48,9 @@ module.exports = (sequelize) => {
     phone:{                                      
         type:DataTypes.STRING,
         allowNull: true,   
+    },image:{                                      
+        type:DataTypes.FLOAT,
+        allowNull: true,   
     }
   }, {
     timestamps: false,

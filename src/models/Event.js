@@ -36,7 +36,20 @@ module.exports = (sequelize) => {
     },
     iterativo:{
         type: DataTypes.BOOLEAN,
-    }
+    },
+    video:{
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    photo:{
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    status:{
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    
 
   }, {
     timestamps: false,
