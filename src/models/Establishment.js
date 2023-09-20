@@ -16,10 +16,18 @@ module.exports = (sequelize) => {
         type:DataTypes.STRING,
         allowNull: true,   
     },
-    photos:{                                      
+    photo_profile:{                                      
         type: DataTypes.STRING,
         allowNull: true,
     },
+    photo_wall:{                                      
+      type: DataTypes.STRING,
+      allowNull: true,
+  },
+  photos:{                                      
+    type: DataTypes.STRING,
+    allowNull: true,
+},
     description:{                                    
         type: DataTypes.STRING,
         allowNull: true,
